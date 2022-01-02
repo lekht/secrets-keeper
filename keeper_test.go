@@ -17,8 +17,8 @@ func TestDummyKeeperGet(t *testing.T) {
 	key := "foo"
 	value := "bar"
 	keeper.mem[key] = value
-	value_from_get, _ := keeper.Get(key)
-	if value_from_get != value {
+	valueFromGet, _ := keeper.Get(key)
+	if valueFromGet != value {
 		t.Error("bad value from get")
 	}
 }

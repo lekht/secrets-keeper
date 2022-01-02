@@ -13,8 +13,8 @@ func indexView(c *gin.Context) {
 
 func saveMessageView(c *gin.Context) {
 	message := c.PostForm("message")
-	key := key_builder.Get()
-	keeper.Set(key_builder.Get(), message)
+	key := keyBuilder.Get()
+	keeper.Set(keyBuilder.Get(), message)
 	c.HTML(http.StatusOK, "key.html", gin.H{"key": fmt.Sprintf("http://%s/%s", c.Request.Host, key)})
 }
 
